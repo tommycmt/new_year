@@ -11,16 +11,18 @@ p {
 </style>
 </head>
 <body>
-
-<p id="demo"></p>
+  <p id="message">Waiting</p>
+  <p id="demo"></p>
 
 <script>
+var year = (new Date()).getFullYear();
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 1, 2019 0:0:0").getTime();
+var countDownDate = new Date("Jan 1, "+(year+1)+"; 0:0:0").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
-
+  document.getElementById("message").innerHTML = "Waiting for " + (year+1);
+  
   // Get todays date and time
   var now = new Date().getTime();
     
@@ -41,6 +43,7 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "Happy New Year";
+    document.getElementById("message").innerHTML = "";
     alert("Happy New Year");
   }
 }, 1000);

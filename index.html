@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -7,17 +8,18 @@ p {
   text-align: center;
   font-size: 60px;
   margin-top: 0px;
+  color: white;
 }
 </style>
 </head>
 <body>
+<div class="shaper">
   <p id="message">Waiting</p>
   <p id="demo"></p>
-
+</div>
 <script>
 const urlParams = new URLSearchParams(window.location.search);
 const qs_year = parseInt(urlParams.get('year'));
-
 var year = qs_year || (new Date()).getFullYear();
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 1, "+(year+1)+"; 0:0:0").getTime();
@@ -53,3 +55,38 @@ var x = setInterval(function() {
 
 </body>
 </html>
+
+
+<style>
+  html, body {
+  margin: 0; padding: 0;
+  height: 100%;
+}
+.shaper {
+  background: gray url(https://tommycmt.github.io/new_year/shaper.png) repeat 0 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 100%;
+  padding-top: 120px;
+  box-sizing: border-box;
+  -webkit-animation: slide 15s linear infinite;
+}
+
+.shaper h1 {
+  font-family: sans-serif;
+  font-size: 80px;
+  color: white;
+}
+
+.shaper h2 {
+  font-family: sans-serif;
+  font-size: 40px;
+  color: white;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -512px -512px; }
+}
+</style>

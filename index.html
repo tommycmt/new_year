@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -12,7 +11,10 @@
     }
     @media only screen and (max-width: 425px) {
       p {
+        text-align: center;
         font-size: 12vw;
+        margin-top: 0px;
+        color: white;
       }
     }
     html, body {
@@ -23,12 +25,22 @@
       background: gray url(https://tommycmt.github.io/new_year/shaper.png) repeat 0 0;
       width: 100%;
       margin: 0;
+      text-align: center;
       height: 100%;
       padding-top: 120px;
       box-sizing: border-box;
       -webkit-animation: slide 15s linear infinite;
     }
-
+    .shaper h1 {
+      font-family: sans-serif;
+      font-size: 80px;
+      color: white;
+    }
+    .shaper h2 {
+      font-family: sans-serif;
+      font-size: 40px;
+      color: white;
+    }
     @-webkit-keyframes slide {
         from { background-position: 0 0; }
         to { background-position: -512px -512px; }
@@ -39,27 +51,22 @@
     const qs_year = parseInt(urlParams.get('year'));
     var year = qs_year || (new Date()).getFullYear();
     // Set the date we're counting down to
-    var countDownDate = new Date("Jan 1, "+(year+1)+"; 0:0:0").getTime();
+    var countDownDate = new Date((year+1)+"/01/01 00:00:00").getTime();
     // Update the count down every 1 second
     var x = setInterval(function() {
       document.getElementById("message").innerHTML = "Waiting for " + (year+1);
-
       // Get todays date and time
       var now = new Date().getTime();
-
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
-
       // Time calculations for days, hours, minutes and seconds
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
       // Output the result in an element with id="demo"
       document.getElementById("demo").innerHTML = days + "d " + hours + "h "
       + minutes + "m " + seconds + "s ";
-
       // If the count down is over, write some text 
       if (distance < 0) {
         clearInterval(x);

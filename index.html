@@ -72,7 +72,9 @@
         clearInterval(x);
         document.getElementById("demo").innerHTML = "Happy New Year";
         document.getElementById("message").innerHTML = "";
-        alert("Happy New Year");
+        setTimeout(function(){
+          alert("Happy New Year");
+        },0)
       }
     }, 1000);
   </script>

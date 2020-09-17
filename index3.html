@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/flipdown/flipdown.css">
+        <script type="text/javascript" src="js/flipdown/flipdown.js"></script>
+        <style>
+
+            #container {
+                position: absolute;
+                background-image: url("https://www.immd.gov.hk/images/content/popup_fight_virus_tc.jpg");;
+                background-repeat: repeat-x;
+                height: 10vw;
+                width: 75vw;
+            }
+
+            #flipdown {
+                position: absolute;
+                margin-left: 25%;
+                margin-right: 25%;
+                padding: auto 0;
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id="container">
+                <div id="flipdown" class="flipdown"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        new FlipDown(1638137672).start();
+    </script>
+</html>
